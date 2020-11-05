@@ -12,7 +12,7 @@ def get_match():
     match = pandas.read_sql("""SELECT * FROM Match WHERE id = 14722;""", conn)
     return match
 
-def get_home_and_away_team_overall_player_rating_sum(match):
+def get_home_and_away_team_overall_player_rating_sum(match, all_players):
     match_date = match['date'][0]
     home_player_ids = numpy.array(match[['home_player_1',
                                          'home_player_2',
